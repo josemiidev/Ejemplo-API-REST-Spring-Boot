@@ -1,8 +1,14 @@
 package dev.josemii.api_rest_ejemplo.Modelo;
 
+import jakarta.persistence.*;
+
+import java.io.Serializable;
 import java.sql.Date;
 
-public class EmpleadosClass {
+@Entity
+@Table(name="empleados")
+public class EmpleadosClass implements Serializable {
+    @Id
     private int empNo;
     private String nombre;
     private String apellido;
@@ -10,8 +16,9 @@ public class EmpleadosClass {
     private Date fechaAlt;
     private Double salario;
     private int deptNo;
+    @ManyToOne
+    @JoinColumn(name="dept_no", nullable = false)
     private DepartamentosClass departamentosByDeptNo;
-
     public int getEmpNo() {
         return empNo;
     }
@@ -105,4 +112,5 @@ public class EmpleadosClass {
     public void setDepartamentosByDeptNo(DepartamentosClass departamentosByDeptNo) {
         this.departamentosByDeptNo = departamentosByDeptNo;
     }
+
 }

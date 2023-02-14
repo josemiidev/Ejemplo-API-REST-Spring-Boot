@@ -1,6 +1,16 @@
 package dev.josemii.api_rest_ejemplo.Modelo;
 
-public class DepartamentosClass {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import java.io.Serializable;
+
+@Entity
+@Table(name="departamentos")
+public class DepartamentosClass implements Serializable {
+    @Id
     private int deptNo;
     private String dnombre;
     private String loc;

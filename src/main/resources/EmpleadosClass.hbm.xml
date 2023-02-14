@@ -23,7 +23,7 @@
         <property name="salario">
             <column name="salario" sql-type="float(6,2)" precision="6" scale="2" not-null="true"/>
         </property>
-        <property name="deptNo" insert="false" update="false">
+        <property name="deptNo" insert="false" update="false" >
             <column name="dept_no" sql-type="int(11)"/>
         </property>
         <many-to-one name="departamentosByDeptNo" class="dev.josemii.api_rest_ejemplo.Modelo.DepartamentosClass">
